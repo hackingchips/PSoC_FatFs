@@ -31,10 +31,12 @@ int main()
     SPI_SpiSetActiveSlaveSelect(1);
     SPI_SS_Write(1);
 
+    UART_UartPutString("...mounting\n");
 	result = f_mount(&FatFs, "", 1);
     
     if (result == FR_OK)
     {
+        UART_UartPutString("...opening\n");
         result = f_open(&Fil, "newfile.txt", FA_READ);
 
     	if (result == FR_OK)
@@ -47,6 +49,25 @@ int main()
     		f_close(&Fil);								/* Close the file */
 
     	} else UART_UartPutString("ERROR: opening \"newfile.txt\"");
+        
+        // ****************************************** SD CARD gets corrupted while writing
+        
+        UART_UartPutString("...create new file\n");
+        result = f_open(&Fil, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
+        
+        if (result == FR_OK)
+        {
+            UART_UartPutString("...writing\n");
+            
+            f_puts("write line 1", &Fil);
+            f_puts("write line 2", &Fil);
+            f_puts("write line 3", &Fil);
+
+    		f_close(&Fil);								/* Close the file */
+            
+            UART_UartPutString("...end writing");
+
+    	} else UART_UartPutString("ERROR: creating new file");
     }
     else
     {
