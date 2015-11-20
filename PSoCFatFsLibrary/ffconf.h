@@ -112,7 +112,7 @@
 /  to 1. This option also affects behavior of string I/O functions. */
 
 
-#define _STRF_ENCODE	3
+#define _STRF_ENCODE	1
 /* When _LFN_UNICODE is 1, this option selects the character encoding on the file to
 /  be read/written via string I/O functions, f_gets(), f_putc(), f_puts and f_printf().
 /

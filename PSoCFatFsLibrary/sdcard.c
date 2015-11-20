@@ -192,8 +192,10 @@ static int xmit_datablock(const BYTE *buff, BYTE token)	/* 1:OK, 0:Failed */
 
 	d[0] = token;
 	xmit_mmc(d, 1);				/* Xmit a token */
+    CyDelay(5); // <*> why?
 	if (token != 0xFD) {		/* Is it data token? */
 		xmit_mmc(buff, 512);	/* Xmit the 512 byte data block to MMC */
+        CyDelay(5); // <*> why?
 		rcvr_mmc(d, 2);			/* Xmit dummy CRC (0xFF,0xFF) */
 		rcvr_mmc(d, 1);			/* Receive data response */
 		if ((d[0] & 0x1F) != 0x05)	/* If not accepted, return with error */

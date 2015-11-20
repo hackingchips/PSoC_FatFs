@@ -14,8 +14,10 @@
 #include "..\..\PSoCFatFsLibrary\ff.h"
 
 FATFS FatFs;		/* FatFs work area needed for each volume */
-
 FIL Fil;			/* File object needed for each open file */
+
+FATFS FatFs_W;
+FIL Fil_W;
 
 char* itoa(int value, char* result, int base);
 
@@ -24,7 +26,10 @@ int main()
     FATFS *FatFsPtr;
     char result = 0;
     char line[100];
+    int result_w;
     
+    unsigned char fortest[] = "This is a test.";
+    UINT towrite, written;
     
     uint32 freeclusters, freesectors, totalsectors;
     uint32 size;
@@ -97,6 +102,19 @@ int main()
 
     	} else UART_UartPutString("ERROR: opening \"newfile.txt\"");
         
+        UART_UartPutString("...un_mounting: ");
+	    result = f_mount(NULL, "", 1);
+        if (result == FR_OK) UART_UartPutString("...OK\n\n");
+        else UART_UartPutString("...FAILED\n\n");
+        
+    }
+    
+    UART_UartPutString("...mounting\n");
+	result = f_mount(&FatFs_W, "", 1);
+    
+    if (result == FR_OK)
+    {
+        
         // *** Writing functions doesn´t work. 
         // ****************************************** SD CARD gets corrupted while writing
         
@@ -124,27 +142,40 @@ int main()
         
         // ****************************************** SD CARD gets corrupted while writing
         
-//        UART_UartPutString("...create new file\n");
-//        result = f_open(&Fil, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
-//        
-//        if (result == FR_OK)
-//        {
-//            UART_UartPutString("...writing\n");
-//            
-//            f_puts("write line 1", &Fil);
-//            f_puts("write line 2", &Fil);
-//            f_puts("write line 3", &Fil);
-//
-//    		f_close(&Fil);								/* Close the file */
-//            
-//            UART_UartPutString("...end writing");
-//
-//    	} else UART_UartPutString("ERROR: creating new file");
+        UART_UartPutString("...create new file\n");
+        result = f_open(&Fil_W, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
+        
+        if (result == FR_OK)
+        {
+            UART_UartPutString("...writing\n");
+            
+            /* this works. */
+//            result_w = f_puts("write line 1", &Fil_W);
+//            result_w = f_puts("write line 2", &Fil_W);
+//            result_w = f_puts("write line 3", &Fil_W);
+            
+            /* this works too. */
+            towrite = 9;
+            result_w = f_write(&Fil_W, fortest, towrite, &written);
+
+    		result = f_close(&Fil_W);								/* Close the file */
+            
+            UART_UartPutString("...end writing\n");
+
+    	} else UART_UartPutString("ERROR: creating new file");
+        
+        UART_UartPutString("...un_mounting: ");
+	    result = f_mount(NULL, "", 1);
+        if (result == FR_OK) UART_UartPutString("...OK\n\n");
+        else UART_UartPutString("...FAILED\n\n");
     }
     else
     {
         UART_UartPutString("ERROR: Can not mount sd-card.");
     }
+    
+    
+    
 
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
