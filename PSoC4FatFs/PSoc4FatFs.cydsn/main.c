@@ -46,6 +46,7 @@ int main()
     UART_UartPutString("...mounting\n");
 	result = f_mount(&FatFs, "", 1);
     
+    /*** test reading. Be sure, "newfile.txt" exists with some text lines inside it. */
     if (result == FR_OK)
     {
         /* read volume label. */
@@ -108,39 +109,46 @@ int main()
         else UART_UartPutString("...FAILED\n\n");
         
     }
+    else
+    {
+        UART_UartPutString("ERROR: Can not mount sd-card.");
+    }
+    
+    //************************************************************************************
+    //************************************************************************************
+    //************************************************************************************
+    //************************************************************************************
     
     UART_UartPutString("...mounting\n");
 	result = f_mount(&FatFs_W, "", 1);
     
     if (result == FR_OK)
     {
+        // *** Test appending to "newfile.txt"
+        UART_UartPutString("...appending to file\n");
+        result = f_open(&Fil, "newfile.txt", FA_WRITE | FA_OPEN_ALWAYS);
         
-        // *** Writing functions doesn´t work. 
-        // ****************************************** SD CARD gets corrupted while writing
+        if (result == FR_OK) 
+        {
+            /* Seek to end of the file to append data */
+            size = f_size(&Fil);
+            result = f_lseek(&Fil, f_size(&Fil));
+            
+            if (result == FR_OK)
+            {
+                //size = f_printf(&Fil, "appended line");
+                size = f_puts("appended line", &Fil);
+                
+                f_close(&Fil);
+                
+                UART_UartPutString("...end appending\n");
+            } else UART_UartPutString("ERROR: appending to file\n");
+                
+        } else UART_UartPutString("ERROR: opening for appending to file\n");
         
-//        UART_UartPutString("...appending to file\n");
-//        result = f_open(&Fil, "newfile.txt", FA_WRITE | FA_OPEN_ALWAYS);
-//        
-//        if (result == FR_OK) 
-//        {
-//            /* Seek to end of the file to append data */
-//            size = f_size(&Fil);
-//            result = f_lseek(&Fil, f_size(&Fil));
-//            
-//            if (result == FR_OK)
-//            {
-//                //size = f_printf(&Fil, "appended line");
-//                size = f_puts("appended line", &Fil);
-//                
-//                f_close(&Fil);
-//                
-//                UART_UartPutString("...end appending\n");
-//            } else UART_UartPutString("ERROR: appending to file\n");
-//                
-//        } else UART_UartPutString("ERROR: opening for appending to file\n");
-        
-        
-        // ****************************************** SD CARD gets corrupted while writing
+        // ****************************************** 
+        // *** create new file "newfileA" and write something inside it. Using f_puts function.
+        // *** be sure "newfileA.txt" doesn´t exist yet.
         
         UART_UartPutString("...create new file\n");
         result = f_open(&Fil_W, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
@@ -149,13 +157,32 @@ int main()
         {
             UART_UartPutString("...writing\n");
             
-            /* this works. */
-//            result_w = f_puts("write line 1", &Fil_W);
-//            result_w = f_puts("write line 2", &Fil_W);
-//            result_w = f_puts("write line 3", &Fil_W);
+            result_w = f_puts("write line 1", &Fil_W);
+            result_w = f_puts("write line 2", &Fil_W);
+            result_w = f_puts("write line 3", &Fil_W);
             
-            /* this works too. */
-            towrite = 9;
+    		result = f_close(&Fil_W);								/* Close the file */
+            
+            UART_UartPutString("...end writing\n");
+
+    	} else UART_UartPutString("ERROR: creating new file");
+        
+        if (result == FR_OK) UART_UartPutString("...OK\n\n");
+        else UART_UartPutString("...FAILED\n\n");
+        
+        // ****************************************** 
+        // *** create new file "newfileB" and write something inside it.
+        // *** be sure "newfileB.txt" doesn´t exist yet.
+        
+        UART_UartPutString("...create new file\n");
+        result = f_open(&Fil_W, "newfileB.txt", FA_WRITE | FA_CREATE_NEW);
+        
+        if (result == FR_OK)
+        {
+            UART_UartPutString("...writing\n");
+            
+            /* this writes only 9 bytes, not complete array "fortest" */
+            towrite = 9;                
             result_w = f_write(&Fil_W, fortest, towrite, &written);
 
     		result = f_close(&Fil_W);								/* Close the file */
@@ -183,12 +210,15 @@ int main()
     }
 }
 
+    //*** this function used for testing. incompatible licenses???
+    //*** write my own and remove this.
 	/**
      * C++ version 0.4 char* style "itoa":
      * Written by LukÃ¡s Chmela
      * Released under GPLv3.
      * http://www.jb.man.ac.uk/~slowe/cpp/itoa.html
      */
+
     char* itoa(int value, char* result, int base) {
         // check that the base if valid
         if (base < 2 || base > 36) { *result = '\0'; return result; }

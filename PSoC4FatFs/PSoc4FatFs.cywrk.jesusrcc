@@ -337,6 +337,10 @@
 <name v="..\PSoCFatFsLibrary\ff.h" />
 <name v="..\PSoCFatFsLibrary\ffconf.h" />
 <name v="..\PSoCFatFsLibrary\integer.h" />
+<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\Cm0Start.c" />
+<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\cypins.h" />
+<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\SPI_SPI_UART.c" />
+<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
