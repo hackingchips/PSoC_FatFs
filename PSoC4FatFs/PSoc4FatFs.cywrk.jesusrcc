@@ -13,14 +13,13 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\sdcard.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoc4FatFs\PSoc4FatFs\Generated_Source">
 <ExpandedNodeIds>
 <v>PSoc4FatFs</v>
 <v>PSoc4FatFs\PSoc4FatFs</v>
 <v>PSoc4FatFs\PSoc4FatFs\TopDesign</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSoc4FatFs.cydwr</v>
 <v>PSoc4FatFs\PSoc4FatFs\Header Files</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\diskio.h</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\ff.c</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\ff.h</v>
@@ -29,9 +28,7 @@
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\rtc.c</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\rtc.h</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\sdcard.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Source Files</v>
 <v>PSoc4FatFs\PSoc4FatFs\Source Files\main.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source</v>
 <v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4</v>
 <v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot</v>
 <v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
@@ -137,45 +134,8 @@
 <v>PSoc4FatFs\PSoc4FatFs\PSoc4FatFs.cydwr</v>
 <v>PSoc4FatFs\PSoc4FatFs\Header Files</v>
 <v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\diskio.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\ff.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\ff.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\ffconf.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\integer.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\rtc.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\rtc.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\PSocFatFsLibrary\sdcard.c</v>
 <v>PSoc4FatFs\PSoc4FatFs\Source Files</v>
-<v>PSoc4FatFs\PSoc4FatFs\Source Files\main.c</v>
 <v>PSoc4FatFs\PSoc4FatFs\Generated_Source</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\Cm0RealView.scat</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\Cm0Start.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\core_cm0.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\core_cm0_psoc4.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\core_cmFunc.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\core_cmInstr.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyBootAsmGnu.s</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyBootAsmIar.s</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyBootAsmRv.s</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyFlash.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyFlash.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyLib.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\CyLib.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cypins.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cyPm.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_lfclk</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\SPI</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\SPI\SPI.c</v>
-<v>PSoc4FatFs\PSoc4FatFs\Generated_Source\PSoC4\SPI\SPI.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -294,7 +254,7 @@
 <v>Datasheet</v>
 </TreeKeysV2>
 <TreeStatesV2>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoc4FatFs">
 <ExpandedNodeIds>
 <v>PSoc4FatFs</v>
 <v>PSoc4FatFs\PSoc4FatFs</v>
@@ -337,10 +297,6 @@
 <name v="..\PSoCFatFsLibrary\ff.h" />
 <name v="..\PSoCFatFsLibrary\ffconf.h" />
 <name v="..\PSoCFatFsLibrary\integer.h" />
-<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\Cm0Start.c" />
-<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\cypins.h" />
-<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\SPI_SPI_UART.c" />
-<name v=".\PSoc4FatFs.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

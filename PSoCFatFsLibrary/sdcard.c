@@ -36,8 +36,8 @@
 
 #include <project.h>
 
-//#define DELAY_CYCLES    3000    // Micro clock 48Mhz. SPI speed 8Mbps (3000 kbps)
-#define DELAY_CYCLES    3000    // Micro clock 24Mhz. SPI speed 1Mbps (750 kbps)
+#define CS_DELAY_US       1
+#define M_DELAY_US        100   
 
 #define dly_us(n)   CyDelayUs(n); /* Delay n microseconds. */
 
@@ -83,8 +83,6 @@ static BYTE CardType;			/* b0:MMC, b1:SDv1, b2:SDv2, b3:Block addressing */
 
 static void xmit_mmc(const BYTE* buff, UINT bc)
 {
-    int n;
-    
     SPI_SpiUartClearTxBuffer();
     SPI_SpiUartClearRxBuffer();
     SPI_SpiUartPutArray(buff, bc);
@@ -108,7 +106,7 @@ static void rcvr_mmc(BYTE *buff, UINT bc)
 
         SPI_SpiUartWriteTxData(0xFF);
         while(0u == (SPI_GetMasterInterruptSource() & SPI_INTR_MASTER_SPI_DONE));
-        CyDelayCycles(DELAY_CYCLES); // <*> adjust, why?
+        CyDelayUs(M_DELAY_US); // <*> adjust, why?
         *buff++ = (BYTE)SPI_SpiUartReadRxData();
     } while (--bc);
 
@@ -143,7 +141,7 @@ static void deselect(void)
 	BYTE d;
 
 	SPI_SS_Write(1); //CS_H();				/* Set CS# high */
-    CyDelayCycles(1000); // <*> adjust
+    CyDelayUs(CS_DELAY_US); // <*> adjust
 	rcvr_mmc(&d, 1);	/* Dummy clock (force DO hi-z for multiple slave SPI) */
 }
 
@@ -156,7 +154,7 @@ static int select(void)	/* 1:OK, 0:Timeout */
 	BYTE d;
 
 	SPI_SS_Write(0); //CS_L();				/* Set CS# low */
-    CyDelayCycles(1000); // <*> adjust
+    CyDelayUs(CS_DELAY_US); // <*> adjust
 	rcvr_mmc(&d, 1);	/* Dummy clock (force DO enabled) */
 	if (wait_ready()) return 1;	/* Wait for card ready */
 
@@ -198,10 +196,10 @@ static int xmit_datablock(const BYTE *buff, BYTE token)	/* 1:OK, 0:Failed */
 
 	d[0] = token;
 	xmit_mmc(d, 1);				/* Xmit a token */
-    CyDelayCycles(DELAY_CYCLES); // <*> why?
+    CyDelayUs(M_DELAY_US); // <*> why?
 	if (token != 0xFD) {		/* Is it data token? */
 		xmit_mmc(buff, 512);	/* Xmit the 512 byte data block to MMC */
-        CyDelayCycles(DELAY_CYCLES); // <*> why?
+        CyDelayUs(M_DELAY_US); // <*> why?
 		rcvr_mmc(d, 2);			/* Xmit dummy CRC (0xFF,0xFF) */
 		rcvr_mmc(d, 1);			/* Receive data response */
 		if ((d[0] & 0x1F) != 0x05)	/* If not accepted, return with error */
@@ -243,7 +241,7 @@ static BYTE send_cmd(BYTE cmd,	DWORD arg)		/* Returns command response (bit7==1:
 	if (cmd == CMD8) n = 0x87;		/* (valid CRC for CMD8(0x1AA)) */
 	buf[5] = n;
 	xmit_mmc(buf, 6);
-    CyDelayCycles(DELAY_CYCLES); // <*> why?
+    CyDelayUs(M_DELAY_US); // <*> why?
 
 	/* Receive command response */
 	if (cmd == CMD12) rcvr_mmc(&d, 1);	/* Skip a stuff byte when stop reading */
