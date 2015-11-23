@@ -6,14 +6,14 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Output">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC4M_FatFs\Design01\PSoCFatFsLibrary">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC4M_FatFs\Design01\PSoCFatFsLibrary\ff.h">
 <ExpandedNodeIds>
 <v>PSoC4M_FatFs</v>
 <v>PSoC4M_FatFs\Design01</v>
@@ -29,9 +29,7 @@
 <v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\rtc.c</v>
 <v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\rtc.h</v>
 <v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\sdcard.c</v>
-<v>PSoC4M_FatFs\Design01\Source Files</v>
 <v>PSoC4M_FatFs\Design01\Source Files\main.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source</v>
 <v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4</v>
 <v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot</v>
 <v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
@@ -137,53 +135,7 @@
 <v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cymetadata.c</v>
 <v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\project.h</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>PSoC4M_FatFs</v>
-<v>PSoC4M_FatFs\Design01</v>
-<v>PSoC4M_FatFs\Design01\TopDesign</v>
-<v>PSoC4M_FatFs\Design01\Design01.cydwr</v>
-<v>PSoC4M_FatFs\Design01\Header Files</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\diskio.h</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\ff.c</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\ff.h</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\ffconf.h</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\integer.h</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\rtc.c</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\rtc.h</v>
-<v>PSoC4M_FatFs\Design01\PSoCFatFsLibrary\sdcard.c</v>
-<v>PSoC4M_FatFs\Design01\Source Files</v>
-<v>PSoC4M_FatFs\Design01\Source Files\main.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\Cm0RealView.scat</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\Cm0Start.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\core_cm0.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\core_cm0_psoc4.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\core_cmFunc.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\core_cmInstr.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyBootAsmGnu.s</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyBootAsmIar.s</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyBootAsmRv.s</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyFlash.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyFlash.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyLib.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\CyLib.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cypins.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cyPm.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_dmac</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_dmac\CyDMA.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_dmac\CyDMA.h</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_lfclk</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
-<v>PSoC4M_FatFs\Design01\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -192,14 +144,9 @@
 <v>PSoC4M_FatFs\Design01\TopDesign</v>
 <v>PSoC4M_FatFs\Design01\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>PSoC4M_FatFs</v>
-<v>PSoC4M_FatFs\Design01</v>
-<v>PSoC4M_FatFs\Design01\TopDesign</v>
-<v>PSoC4M_FatFs\Design01\TopDesign\TopDesign.cysch</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC4M_FatFs">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>PSoC4M_FatFs</v>
 <v>PSoC4M_FatFs\Design01</v>
@@ -250,53 +197,7 @@
 <v>PSoC4M_FatFs\Design01\Design01.rpt</v>
 <v>PSoC4M_FatFs\Design01\Design01_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>PSoC4M_FatFs</v>
-<v>PSoC4M_FatFs\Design01</v>
-<v>PSoC4M_FatFs\Design01\CortexM0</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\Cm0Start.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\CyDMA.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\ff.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\rtc.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\sdcard.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_BOOT.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_miso_m.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_mosi_m.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_PM.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_SCBCLK.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_sclk_m.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_SPI.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_SPI_BOOT.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_SPI_UART.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_SS.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\SPI_ss0_m.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_BOOT.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_PM.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_rx.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SCBCLK.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SPI_UART.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_tx.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_UART.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_UART_BOOT.lst</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Design01.elf</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Design01.hex</v>
-<v>PSoC4M_FatFs\Design01\CortexM0\ARM_GCC_493\Debug\Design01.map</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -317,19 +218,7 @@
 <v>PSoC4M_FatFs\Design01\SCB_P4_v3_0</v>
 <v>PSoC4M_FatFs\Design01\SCB_P4_v3_0\SCB_P4_v3_0.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>PSoC4M_FatFs</v>
-<v>PSoC4M_FatFs\Design01</v>
-<v>PSoC4M_FatFs\Design01\PSoC 4 Architecture TRM</v>
-<v>PSoC4M_FatFs\Design01\PSoC 4200M Family Datasheet</v>
-<v>PSoC4M_FatFs\Design01\System Reference Guides</v>
-<v>PSoC4M_FatFs\Design01\System Reference Guides\cy_boot_v5_20</v>
-<v>PSoC4M_FatFs\Design01\System Reference Guides\cy_dmac_v1_0</v>
-<v>PSoC4M_FatFs\Design01\System Reference Guides\cy_lfclk_v1_0</v>
-<v>PSoC4M_FatFs\Design01\cy_pins_v2_10.pdf</v>
-<v>PSoC4M_FatFs\Design01\SCB_P4_v3_0</v>
-<v>PSoC4M_FatFs\Design01\SCB_P4_v3_0\SCB_P4_v3_0.pdf</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -341,6 +230,12 @@
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\main.c" />
 <name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\rtc.h" />
+<name v=".\Design01.cydsn\rtc.c" />
+<name v="..\PSoCFatFsLibrary\ff.h" />
+<name v="..\PSoCFatFsLibrary\ff.c" />
+<name v="..\PSoCFatFsLibrary\sdcard.c" />
+<name v="..\PSoCFatFsLibrary\diskio.h" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

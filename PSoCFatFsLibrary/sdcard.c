@@ -15,12 +15,6 @@
   * Easy to Port Bit-banging SPI
     It uses only four GPIO pins. No complex peripheral needs to be used.
 
-  * Platform Independent
-    You need to modify only a few macros to control the GPIO port.
-
-  * Low Speed
-    The data transfer rate will be several times slower than hardware SPI.
-
   * No Media Change Detection
     Application program needs to perform a f_mount() after media change.
 
@@ -35,9 +29,10 @@
 /*-------------------------------------------------------------------------*/
 
 #include <project.h>
+#include <cytypes.h>
 
 #define CS_DELAY_US       1
-#define M_DELAY_US        100   
+#define M_DELAY_US        100
 
 #define dly_us(n)   CyDelayUs(n); /* Delay n microseconds. */
 
@@ -75,19 +70,43 @@ static DSTATUS Stat = STA_NOINIT;	/* Disk status */
 
 static BYTE CardType;			/* b0:MMC, b1:SDv1, b2:SDv2, b3:Block addressing */
 
-
-
 /*-----------------------------------------------------------------------*/
 /* Transmit bytes to the card                                            */
 /*-----------------------------------------------------------------------*/
 
 static void xmit_mmc(const BYTE* buff, UINT bc)
 {
+    uint8 byte;
+#if (CY_PSOC4)
+    
     SPI_SpiUartClearTxBuffer();
     SPI_SpiUartClearRxBuffer();
     SPI_SpiUartPutArray(buff, bc);
     
     while(0u == (SPI_GetMasterInterruptSource() & SPI_INTR_MASTER_SPI_DONE));
+    
+#endif
+
+#if (CY_PSOC5LP)
+    
+    SPI_ClearTxBuffer();
+    SPI_ClearRxBuffer();
+    SPI_PutArray(buff, bc);
+    
+    while (SPI_GetTxBufferSize()) {};
+    
+//    byte = SPI_ReadStatus();
+//    while(!(byte & SPI_STS_BYTE_COMPLETE)) 
+//    { 
+//        byte = SPI_ReadStatus(); 
+//    }
+
+    //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
+    //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
+    
+#endif    
+
+
 }
 
 
@@ -98,6 +117,9 @@ static void xmit_mmc(const BYTE* buff, UINT bc)
 
 static void rcvr_mmc(BYTE *buff, UINT bc)
 {
+
+#if (CY_PSOC4) 
+    
     SPI_SpiUartClearTxBuffer();
     SPI_SpiUartClearRxBuffer();
     
@@ -108,7 +130,30 @@ static void rcvr_mmc(BYTE *buff, UINT bc)
         while(0u == (SPI_GetMasterInterruptSource() & SPI_INTR_MASTER_SPI_DONE));
         CyDelayUs(M_DELAY_US); // <*> adjust, why?
         *buff++ = (BYTE)SPI_SpiUartReadRxData();
+
     } while (--bc);
+    
+#endif    
+
+#if (CY_PSOC5LP)
+    
+    SPI_ClearTxBuffer();
+    SPI_ClearRxBuffer();
+    
+    do
+    {
+
+        SPI_WriteTxData(0xFF);
+        while (SPI_GetTxBufferSize()) {};
+        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {}
+        //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
+        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
+        CyDelayUs(M_DELAY_US); // <*> adjust, why?
+        *buff++ = (BYTE)SPI_ReadRxData();
+
+    } while (--bc);    
+    
+#endif    
 
 }
 
