@@ -126,27 +126,27 @@ int main()
     
     if (result == FR_OK)
     {
-//        // *** Test appending to "newfile.txt"
-//        UART_PutString("...appending to file\n");
-//        result = f_open(&Fil, "newfile.txt", FA_WRITE | FA_OPEN_ALWAYS);
-//        
-//        if (result == FR_OK) 
-//        {
-//            /* Seek to end of the file to append data */
-//            size = f_size(&Fil);
-//            result = f_lseek(&Fil, f_size(&Fil));
-//            
-//            if (result == FR_OK)
-//            {
-//                //size = f_printf(&Fil, "appended line");
-//                size = f_puts("appended line", &Fil);
-//                
-//                f_close(&Fil);
-//                
-//                UART_PutString("...end appending\n");
-//            } else UART_PutString("ERROR: appending to file\n");
-//                
-//        } else UART_PutString("ERROR: opening for appending to file\n");
+        // *** Test appending to "newfile.txt"
+        UART_PutString("...appending to file\n");
+        result = f_open(&Fil, "newfile.txt", FA_WRITE | FA_OPEN_ALWAYS);
+        
+        if (result == FR_OK) 
+        {
+            /* Seek to end of the file to append data */
+            size = f_size(&Fil);
+            result = f_lseek(&Fil, f_size(&Fil));
+            
+            if (result == FR_OK)
+            {
+                //size = f_printf(&Fil, "appended line");
+                size = f_puts("appended line", &Fil);
+                
+                f_close(&Fil);
+                
+                UART_PutString("...end appending\n");
+            } else UART_PutString("ERROR: appending to file\n");
+                
+        } else UART_PutString("ERROR: opening for appending to file\n");
         
         // ****************************************** 
         // *** create new file "newfileA" and write something inside it. Using f_puts function.
@@ -160,12 +160,15 @@ int main()
             UART_PutString("...writing\n");
             
             result = f_puts("write line 1", &Fil_W);
+            result = result + 1;
             if (result != FR_OK) UART_PutString("...oh!!! error writing\n");
             result = f_puts("write line 2", &Fil_W);
+            result = result + 1;
             result = f_puts("write line 3", &Fil_W);
+            result = result + 1;
             
     		result = f_close(&Fil_W);								/* Close the file */
-            
+            result = result + 1;
             UART_PutString("...end writing\n");
 
     	} else UART_PutString("ERROR: creating new file");
@@ -187,6 +190,8 @@ int main()
             /* this writes only 9 bytes, not complete array "fortest" */
             towrite = 9;                
             result_w = f_write(&Fil_W, fortest, towrite, &written);
+            
+            result_w = result_w + 1;
 
     		result = f_close(&Fil_W);								/* Close the file */
             

@@ -78,12 +78,34 @@ static void xmit_mmc(const BYTE* buff, UINT bc)
 {
     uint8 byte;
 
+ #if (CY_PSOC4)
     
     SPI_SpiUartClearTxBuffer();
     SPI_SpiUartClearRxBuffer();
     SPI_SpiUartPutArray(buff, bc);
     
     while(0u == (SPI_GetMasterInterruptSource() & SPI_INTR_MASTER_SPI_DONE));
+    
+#endif
+
+#if (CY_PSOC5LP)
+    
+    SPI_ClearTxBuffer();
+    SPI_ClearRxBuffer();
+    SPI_PutArray(buff, bc);
+    
+    while (SPI_GetTxBufferSize()) {};
+    
+//    byte = SPI_ReadStatus();
+//    while(!(byte & SPI_STS_BYTE_COMPLETE)) 
+//    { 
+//        byte = SPI_ReadStatus(); 
+//    }
+
+    //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
+    //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
+    
+#endif    
 }
 
 
@@ -95,7 +117,7 @@ static void xmit_mmc(const BYTE* buff, UINT bc)
 static void rcvr_mmc(BYTE *buff, UINT bc)
 {
 
-
+#if (CY_PSOC4) 
     
     SPI_SpiUartClearTxBuffer();
     SPI_SpiUartClearRxBuffer();
@@ -109,6 +131,28 @@ static void rcvr_mmc(BYTE *buff, UINT bc)
         *buff++ = (BYTE)SPI_SpiUartReadRxData();
 
     } while (--bc);   
+    
+#endif    
+    
+#if (CY_PSOC5LP)
+    
+    SPI_ClearTxBuffer();
+    SPI_ClearRxBuffer();
+    
+    do
+    {
+
+        SPI_WriteTxData(0xFF);
+        while (SPI_GetTxBufferSize()) {};
+        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {}
+        //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
+        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
+        CyDelayUs(M_DELAY_US); // <*> adjust, why?
+        *buff++ = (BYTE)SPI_ReadRxData();
+
+    } while (--bc);    
+    
+#endif        
 
 }
 
