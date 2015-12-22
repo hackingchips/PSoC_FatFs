@@ -28,6 +28,9 @@ int main()
     char line[100];
     int result_w;
     
+    uint8 readed[512];
+    UINT bytesreaded;
+    
     unsigned char fortest[] = "This is a test.";
     UINT towrite, written;
     
@@ -151,17 +154,17 @@ int main()
         // *** be sure "newfileA.txt" doesn´t exist yet.
         
         UART_UartPutString("...create new file\n");
-        result = f_open(&Fil_W, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
+        result = f_open(&Fil, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
         
         if (result == FR_OK)
         {
             UART_UartPutString("...writing\n");
             
-            result_w = f_puts("write line 1", &Fil_W);
-            result_w = f_puts("write line 2", &Fil_W);
-            result_w = f_puts("write line 3", &Fil_W);
+            result_w = f_puts("write line 1", &Fil);
+            result_w = f_puts("write line 2", &Fil);
+            result_w = f_puts("write line 3", &Fil);
             
-    		result = f_close(&Fil_W);								/* Close the file */
+    		result = f_close(&Fil);								/* Close the file */
             
             UART_UartPutString("...end writing\n");
 
@@ -191,14 +194,25 @@ int main()
 
     	} else UART_UartPutString("ERROR: creating new file");
         
+        //*****************************
+                UART_UartPutString("...music\n");
+        result = f_open(&Fil, "music.raw", FA_READ);
+
+    	if (result == FR_OK)
+        {
+            result = f_read(&Fil, readed, 512, &bytesreaded);
+
+    		f_close(&Fil);								/* Close the file */
+
+    	} else UART_UartPutString("ERROR: opening \"newfile.txt\"");
+
+        //*******************
+        
         UART_UartPutString("...un_mounting: ");
 	    result = f_mount(NULL, "", 1);
         if (result == FR_OK) UART_UartPutString("...OK\n\n");
         else UART_UartPutString("...FAILED\n\n");
-    }
-    else
-    {
-        UART_UartPutString("ERROR: Can not mount sd-card.");
+        
     }
     
     

@@ -123,6 +123,8 @@ int main()
     UART_UartPutString("...mounting\n");
 	result = f_mount(&FatFs_W, "", 1);
     
+
+    
     if (result == FR_OK)
     {
         // *** Test appending to "newfile.txt"
@@ -152,7 +154,7 @@ int main()
         // *** be sure "newfileA.txt" doesnÂ´t exist yet.
         
         UART_UartPutString("...create new file\n");
-        result = f_open(&Fil_W, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
+        result = f_open(&Fil_W, "newfileC.txt", FA_WRITE | FA_CREATE_NEW);
         
         if (result == FR_OK)
         {
@@ -176,7 +178,7 @@ int main()
         // *** be sure "newfileB.txt" doesnÂ´t exist yet.
         
         UART_UartPutString("...create new file\n");
-        result = f_open(&Fil_W, "newfileB.txt", FA_WRITE | FA_CREATE_NEW);
+        result = f_open(&Fil_W, "newfileA.txt", FA_WRITE | FA_CREATE_NEW);
         
         if (result == FR_OK)
         {
