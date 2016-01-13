@@ -37,7 +37,8 @@
        Example: 
         - if using Cypress API macros: SPI_ss0_m_Write
         - if using another gpio pint: SPI_SS_Write. */
-#define mmSPI_SS_Write(value)   SPI_ss0_m_Write(value)
+//#define mmSPI_SS_Write(value)   SPI_ss0_m_Write(value)
+#define mmSPI_SS_Write(value)     SPI_SS_Write(value)        
 
 #define CS_DELAY_US             1
 #define M_DELAY_US              100
@@ -60,6 +61,17 @@
     #define mmSPI_INTR_MASTER_SPI_DONE                  CONCATENATE(SPI_NAME, _INTR_MASTER_SPI_DONE)    
     
 #endif    
+
+#if (CY_PSOC5LP) 
+    #define mmSPI_SpiUartClearTxBuffer                  CONCATENATE(SPI_NAME, _ClearTxBuffer)
+    #define mmSPI_SpiUartClearRxBuffer                  CONCATENATE(SPI_NAME, _ClearRxBuffer)    
+    #define mmSPI_SpiUartPutArray(a, b)                 CONCATENATE(SPI_NAME, _PutArray(a, b)) 
+    #define mmSPI_SpiUartWriteTxData(value)             CONCATENATE(SPI_NAME, _WriteTxData(value))
+    #define mmSPI_SpiUartReadRxData                     CONCATENATE(SPI_NAME, _ReadRxData)
+    #define mmSPI_GetMasterInterruptSource              CONCATENATE(SPI_NAME, _GetMasterInterruptSource)
+    #define mmSPI_ClearMasterInterruptSource(value)     CONCATENATE(SPI_NAME, _ClearMasterInterruptSource(value)) 
+    #define mmSPI_INTR_MASTER_SPI_DONE                  CONCATENATE(SPI_NAME, _INTR_MASTER_SPI_DONE)    
+#endif 
 
     /* Delays. */
 #define dly_us(n)               CyDelayUs(n); /* Delay n microseconds. */
@@ -117,20 +129,15 @@ static void xmit_mmc(const BYTE* buff, UINT bc)
 
 #if (CY_PSOC5LP)
     
+    UINT loop;
+    
     SPI_ClearTxBuffer();
     SPI_ClearRxBuffer();
-    SPI_PutArray(buff, bc);
+    
+    for (loop = 0; loop < bc; loop++)
+        SPI_WriteTxData(buff[loop]);
     
     while (SPI_GetTxBufferSize()) {};
-    
-//    byte = SPI_ReadStatus();
-//    while(!(byte & SPI_STS_BYTE_COMPLETE)) 
-//    { 
-//        byte = SPI_ReadStatus(); 
-//    }
-
-    //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
-    //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
     
 #endif    
 }
@@ -171,9 +178,6 @@ static void rcvr_mmc(BYTE *buff, UINT bc)
 
         SPI_WriteTxData(0xFF);
         while (SPI_GetTxBufferSize()) {};
-        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {}
-        //while(!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {};
-        //while(!(SPI_ReadStatus() & SPI_STS_BYTE_COMPLETE)) {};
         CyDelayUs(M_DELAY_US); // <*> adjust, why?
         *buff++ = (BYTE)SPI_ReadRxData();
 
@@ -212,8 +216,6 @@ static void deselect(void)
 	BYTE d;
 
     mmSPI_SS_Write(1);
-    //SPI_ss0_m_Write(1);
-	//SPI_SS_Write(1); //CS_H();				/* Set CS# high */
     CyDelayUs(CS_DELAY_US); // <*> adjust
 	rcvr_mmc(&d, 1);	/* Dummy clock (force DO hi-z for multiple slave SPI) */
 }
@@ -227,8 +229,6 @@ static int select(void)	/* 1:OK, 0:Timeout */
 	BYTE d;
 
     mmSPI_SS_Write(0);
-    //SPI_ss0_m_Write(0);
-	//SPI_SS_Write(0); //CS_L();				/* Set CS# low */
     CyDelayUs(CS_DELAY_US); // <*> adjust
 	rcvr_mmc(&d, 1);	/* Dummy clock (force DO enabled) */
 	if (wait_ready()) return 1;	/* Wait for card ready */

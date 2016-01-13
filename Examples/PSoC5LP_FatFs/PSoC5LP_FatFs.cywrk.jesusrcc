@@ -13,22 +13,20 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\sdcard.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\sdcard.c">
 <ExpandedNodeIds>
 <v>PSoC5LP_FatFs</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\TopDesign</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC5LP_FatFs.cydwr</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Header Files</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\diskio.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ff.c</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ff.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ffconf.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\integer.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\rtc.c</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\rtc.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\sdcard.c</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\diskio.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ff.c</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ff.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ffconf.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\integer.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\sdcard.c</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Source Files</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Source Files\main.c</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Generated_Source</v>
@@ -118,15 +116,15 @@
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\TopDesign</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC5LP_FatFs.cydwr</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Header Files</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\diskio.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ff.c</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ff.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\ffconf.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\integer.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\rtc.c</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\rtc.h</v>
-<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoCFatFsLibrary\sdcard.c</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\diskio.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ff.c</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ff.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\ffconf.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\integer.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\rtc.c</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\rtc.h</v>
+<v>PSoC5LP_FatFs\PSoC5LP_FatFs\PSoC_FatFs_Library\sdcard.c</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Source Files</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Source Files\main.c</v>
 <v>PSoC5LP_FatFs\PSoC5LP_FatFs\Generated_Source</v>
@@ -298,12 +296,12 @@
 <OpenDocs>
 <name v=".\PSoC5LP_FatFs.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\PSoC5LP_FatFs.cydsn\main.c" />
-<name v="..\PSoCFatFsLibrary\sdcard.c" />
 <name v=".\PSoC5LP_FatFs.cydsn\PSoC5LP_FatFs.cydwr" />
-<name v="..\PSoCFatFsLibrary\ff.c" />
-<name v=".\PSoC5LP_FatFs.cydsn\Generated_Source\PSoC5\SPI.c" />
 <name v=".\PSoC5LP_FatFs.cydsn\Generated_Source\PSoC5\SPI.h" />
-<name v="..\PSoCFatFsLibrary\ff.h" />
+<name v="..\..\PSoC_FatFs_Library\sdcard.c" />
+<name v=".\PSoC5LP_FatFs.cydsn\rtc.c" />
+<name v="..\..\PSoC_FatFs_Library\ff.c" />
+<name v=".\PSoC5LP_FatFs.cydsn\Generated_Source\PSoC5\SPI.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

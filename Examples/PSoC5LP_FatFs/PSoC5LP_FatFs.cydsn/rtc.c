@@ -12,8 +12,8 @@
 
 #include <project.h>
 #include "rtc.h"
-#include "..\..\PSoCFatFsLibrary\diskio.h"
-#include "..\..\PSocFatFsLibrary\ff.h"
+#include "..\..\..\PSoC_FatFs_Library\diskio.h"
+#include "..\..\..\PSoc_FatFs_Library\ff.h"
 
 /*---------------------------------------------------------*/
 /* User Provided RTC Function for FatFs module             */
