@@ -13,4 +13,4 @@
 
     All demos tested with: Sandisk 2GB sdcard, Sandisk 4GB Ultra (30MB/s) SDHC I card and three other 2GB unbranded micro sd cards.
 
-MORE INFO ASAP.
+http://hackingchips.com/libreria-fatfs-para-microncontroladores-psoc/
